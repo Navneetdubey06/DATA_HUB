@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Hub - Comprehensive Data Analysis Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div class="particle-background" id="particleBackground"></div>
+
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="header">
+            <h1><i class="fas fa-chart-line"></i> Data Hub</h1>
+            <p>Comprehensive Data Analysis Platform with Python Libraries Integration</p>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h3><i class="fas fa-bars"></i> Navigation</h3>
+                <a href="#" class="nav-item active" data-section="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" class="nav-item" data-section="upload">
+                    <i class="fas fa-upload"></i> Data Upload
+                </a>
+                <a href="#" class="nav-item" data-section="pandas">
+                    <i class="fas fa-table"></i> Pandas
+                </a>
+                <a href="#" class="nav-item" data-section="numpy">
+                    <i class="fas fa-calculator"></i> NumPy
+                </a>
+                <a href="#" class="nav-item" data-section="visualization">
+                    <i class="fas fa-chart-bar"></i> Visualization
+                </a>
+                <a href="#" class="nav-item" data-section="sklearn">
+                    <i class="fas fa-brain"></i> Machine Learning
+                </a>
+                <a href="#" class="nav-item" data-section="tensorflow">
+                    <i class="fas fa-robot"></i> Deep Learning
+                </a>
+                <a href="#" class="nav-item" data-section="ai-summary">
+                    <i class="fas fa-magic"></i> AI Summary
+                </a>
+                <a href="#" class="nav-item" data-section="download">
+                    <i class="fas fa-download"></i> Download Data
+                </a>
+                <a href="#" class="nav-item" data-section="reports">
+                    <i class="fas fa-file-alt"></i> Reports
+                </a>
+                <a href="#" class="nav-item" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <!--<a href="#" class="nav-item" data-section="scraping">
+                    <i class="fas fa-search"></i> Data Scraping
+                </a>-->
+            </div>
+
+            <div class="content">
+                <!-- Landing Page Section -->
+                <div id="home" class="section active">
+                    <div class="landing-page">
+                        <!-- Hero Section -->
+                        <div class="hero-section">
+                            <div class="hero-content">
+                                <div class="hero-text">
+                                    <h1 class="hero-title">
+                                        <span class="hero-title-main">Data Hub</span>
+                                        <span class="hero-title-sub">Advanced Analytics Platform</span>
+                                    </h1>
+                                    <p class="hero-description">
+                                        Transform your data into insights with our comprehensive suite of Python data science tools.
+                                        From data manipulation to machine learning, we've got everything you need.
+                                    </p>
+                                    <div class="hero-buttons">
+                                        <button class="btn btn-primary" onclick="switchSection('upload')">
+                                            <i class="fas fa-rocket"></i> Get Started
+                                        </button>
+                                        <button class="btn btn-secondary" onclick="switchSection('dashboard')">
+                                            <i class="fas fa-chart-line"></i> View Dashboard
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="hero-visual">
+                                    <div class="floating-elements">
+                                        <div class="floating-element element-1">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        <div class="floating-element element-2">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                        <div class="floating-element element-3">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                        <div class="floating-element element-4">
+                                            <i class="fas fa-database"></i>
+                                        </div>
+                                        <div class="floating-element element-5">
+                                            <i class="fas fa-magic"></i>
+                                        </div>
+                                    </div>
+                                    <div class="hero-3d-cube">
+                                        <div class="cube">
+                                            <div class="face front"></div>
+                                            <div class="face back"></div>
+                                            <div class="face right"></div>
+                                            <div class="face left"></div>
+                                            <div class="face top"></div>
+                                            <div class="face bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Features Section -->
+                        <div class="features-section">
+                            <h2 class="section-title">Powerful Data Science Tools</h2>
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-table"></i>
+                                    </div>
+                                    <h3>Pandas</h3>
+                                    <p>Data manipulation and analysis library with powerful data structures for efficient data handling.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <h3>NumPy</h3>
+                                    <p>Fundamental package for array computing and mathematical operations with high performance.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h3>Visualization</h3>
+                                    <p>Create stunning charts and graphs with Matplotlib, Seaborn, and Plotly integration.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h3>Machine Learning</h3>
+                                    <p>Build and train ML models with Scikit-learn's comprehensive algorithms and tools.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h3>Deep Learning</h3>
+                                    <p>Advanced neural networks and deep learning with TensorFlow integration.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <h3>AI Insights</h3>
+                                    <p>Get intelligent data analysis and insights with our AI-powered summary tools.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Section -->
+                        <div class="stats-section">
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="1000">0</div>
+                                    <div class="stat-label">Data Points Processed</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="50">0</div>
+                                    <div class="stat-label">ML Models Trained</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="25">0</div>
+                                    <div class="stat-label">Visualization Types</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="10">0</div>
+                                    <div class="stat-label">Libraries Integrated</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Section -->
+                        <div class="cta-section">
+                            <div class="cta-content">
+                                <h2>Ready to Transform Your Data?</h2>
+                                <p>Start your data science journey today with our comprehensive platform.</p>
+                                <button class="btn btn-cta" onclick="switchSection('upload')">
+                                    <i class="fas fa-upload"></i> Upload Your Data
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Keyboard Shortcuts Help -->
+                        <div class="shortcuts-section">
+                            <h2 class="section-title">Keyboard Shortcuts</h2>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <div class="shortcut-keys">
+                                        <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                                    </div>
+                                    <div class="shortcut-desc">Focus search bar</div>
+                                </div>
+                                <div class="shortcut-item">
+                                    <div class="shortcut-keys">
+                                        <kbd>Ctrl</kbd> + <kbd>U</kbd>
+                                    </div>
+                                    <div class="shortcut-desc">Upload data</div>
+                                </div>
+                                <div class="shortcut-item">
+                                    <div class="shortcut-keys">
+                                        <kbd>Ctrl</kbd> + <kbd>V</kbd>
+                                    </div>
+                                    <div class="shortcut-desc">Visualization</div>
+                                </div>
+                                <div class="shortcut-item">
+                                    <div class="shortcut-keys">
+                                        <kbd>Ctrl</kbd> + <kbd>D</kbd>
+                                    </div>
+                                    <div class="shortcut-desc">Dashboard</div>
+                                </div>
+                                <div class="shortcut-item">
+                                    <div class="shortcut-keys">
+                                        <kbd>Ctrl</kbd> + <kbd>H</kbd>
+                                    </div>
+                                    <div class="shortcut-desc">Home page</div>
+                                </div>
+                                <div class="shortcut-item">
+                                    <div class="shortcut-keys">
+                                        <kbd>Ctrl</kbd> + <kbd>M</kbd>
+                                    </div>
+                                    <div class="shortcut-desc">Toggle theme</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Section -->
+                <div id="upload" class="section">
+                    <h2><i class="fas fa-upload"></i> Data Upload</h2>
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #cbd5e0; margin-bottom: 15px;"></i>
+                        <p>Drag and drop your CSV or JSON file here, or click to browse</p>
+                        <input type="file" id="fileInput" class="file-input" accept=".csv,.json">
+                    </div>
+                    <div id="uploadStatus"></div>
+                    <div id="dataPreview"></div>
+                </div>
+
+                <!-- Pandas Section -->
+                <div id="pandas" class="section">
+                    <h2><i class="fas fa-table"></i> Pandas Operations</h2>
+                    <div class="search-box">
+                        <input type="text" id="pandasSearch" placeholder="Search Pandas functions...">
+                    </div>
+                    <div class="function-grid" id="pandasFunctions">
+                        <!-- Functions will be populated by JavaScript -->
+                    </div>
+                    <div id="pandasParams"></div>
+                    <div id="pandasResult"></div>
+                </div>
+
+                <!-- NumPy Section -->
+                <div id="numpy" class="section">
+                    <h2><i class="fas fa-calculator"></i> NumPy Operations</h2>
+                    <div class="search-box">
+                        <input type="text" id="numpySearch" placeholder="Search NumPy functions...">
+                    </div>
+                    <div class="function-grid" id="numpyFunctions">
+                        <!-- Functions will be populated by JavaScript -->
+                    </div>
+                    <div id="numpyParams"></div>
+                    <div id="numpyResult"></div>
+                </div>
+
+                <!-- Visualization Section -->
+                <div id="visualization" class="section">
+                    <h2><i class="fas fa-chart-bar"></i> Data Visualization</h2>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-library="matplotlib">Matplotlib</button>
+                        <button class="tab-btn" data-library="seaborn">Seaborn</button>
+                        <button class="tab-btn" data-library="plotly">Plotly</button>
+                    </div>
+                    <div class="function-grid" id="vizFunctions">
+                        <!-- Chart types will be populated by JavaScript -->
+                    </div>
+                    <div id="vizParams"></div>
+                    <div id="chartContainer"></div>
+                </div>
+
+                <!-- Scikit-learn Section -->
+                <div id="sklearn" class="section">
+                    <h2><i class="fas fa-brain"></i> Machine Learning (Scikit-learn)</h2>
+                    <div class="search-box">
+                        <input type="text" id="sklearnSearch" placeholder="Search ML algorithms...">
+                    </div>
+                    <div class="function-grid" id="sklearnFunctions">
+                        <!-- Algorithms will be populated by JavaScript -->
+                    </div>
+                    <div id="sklearnParams"></div>
+                    <div id="sklearnResult"></div>
+                </div>
+
+                <!-- TensorFlow Section -->
+                <div id="tensorflow" class="section">
+                    <h2><i class="fas fa-robot"></i> Deep Learning (TensorFlow)</h2>
+                    <div class="search-box">
+                        <input type="text" id="tensorflowSearch" placeholder="Search DL models...">
+                    </div>
+                    <div class="function-grid" id="tensorflowFunctions">
+                        <!-- Models will be populated by JavaScript -->
+                    </div>
+                    <div id="tensorflowParams"></div>
+                    <div id="tensorflowResult"></div>
+                    <div id="tensorflowCodeDownload" style="margin-top: 20px; display: none;">
+                        <button class="btn btn-primary" id="downloadTensorflowCodeBtn">
+                            <i class="fas fa-code"></i> Download Model Code
+                        </button>
+                        <button class="btn btn-secondary" id="downloadModelWeightsBtn" style="margin-left: 10px;">
+                            <i class="fas fa-save"></i> Download Model Weights
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Summary Section -->
+                <div id="ai-summary" class="section">
+                    <h2><i class="fas fa-magic"></i> AI-Powered Data Summary</h2>
+                    <p>Get intelligent insights about your data using advanced local analysis.</p>
+                    <div style="background: #e6fffa; padding: 10px; border-radius: 6px; margin-bottom: 15px; border-left: 4px solid #38b2ac;">
+                        <small><i class="fas fa-info-circle"></i> <strong>Note:</strong> No API keys required! Uses sophisticated statistical analysis and machine learning algorithms locally for AI-like insights.</small>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <button class="btn" id="testAIConnection">
+                            <i class="fas fa-plug"></i> Test AI Connection
+                        </button>
+                        <button class="btn" id="generateSummary">
+                            <i class="fas fa-magic"></i> Generate AI Summary
+                        </button>
+                    </div>
+                    <div id="aiTestResult"></div>
+                    <div id="aiSummaryResult"></div>
+                </div>
+
+                <!-- Download Section -->
+                <div id="download" class="section">
+                    <h2><i class="fas fa-download"></i> Download Processed Data</h2>
+                    <p>Download your modified dataset as CSV.</p>
+                    <button class="btn" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download CSV
+                    </button>
+                </div>
+
+                <!-- Reports Section -->
+                <div id="reports" class="section">
+                    <h2><i class="fas fa-file-alt"></i> Generate Reports</h2>
+                    <p>Create comprehensive reports of your data analysis.</p>
+                    <div class="report-options">
+                        <div class="form-group">
+                            <label>Report Title:</label>
+                            <input type="text" id="reportTitle" value="Data Analysis Report">
+                        </div>
+                        <div class="form-group">
+                            <label>Report Type:</label>
+                            <select id="reportType">
+                                <option value="html">HTML Report</option>
+                                <option value="pdf">PDF Report</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="includeStats" checked> Include Statistics</label>
+                            <label><input type="checkbox" id="includeCorrelations" checked> Include Correlations</label>
+                            <label><input type="checkbox" id="includeVisualizations" checked> Include Visualizations</label>
+                            <label><input type="checkbox" id="includeAI" checked> Include AI Insights</label>
+                        </div>
+                        <button class="btn" id="generateReportBtn">
+                            <i class="fas fa-file-alt"></i> Generate Report
+                        </button>
+                    </div>
+                    <div id="reportResult"></div>
+                </div>
+
+                <!-- Dashboard Section -->
+                <div id="dashboard" class="section">
+                    <h2><i class="fas fa-tachometer-alt"></i> Interactive Dashboard</h2>
+                    <p>Create and manage interactive dashboards for your data.</p>
+                    <div class="dashboard-controls">
+                        <button class="btn" id="createDashboardBtn">
+                            <i class="fas fa-plus"></i> Create New Dashboard
+                        </button>
+                        <button class="btn" id="loadDashboardsBtn">
+                            <i class="fas fa-list"></i> Load Dashboards
+                        </button>
+                    </div>
+                    <div id="dashboardList"></div>
+                    <div id="dashboardEditor" style="display: none;">
+                        <h3>Dashboard Editor</h3>
+                        <div class="form-group">
+                            <label>Dashboard Title:</label>
+                            <input type="text" id="dashboardTitle" value="My Dashboard">
+                        </div>
+                        <div class="form-group">
+                            <label>Layout:</label>
+                            <select id="dashboardLayout">
+                                <option value="grid">Grid</option>
+                                <option value="masonry">Masonry</option>
+                            </select>
+                        </div>
+                        <div id="widgetSelector">
+                            <h4>Add Widgets</h4>
+                            <div class="widget-types">
+                                <button class="widget-btn" data-type="histogram">Histogram</button>
+                                <button class="widget-btn" data-type="scatter">Scatter Plot</button>
+                                <button class="widget-btn" data-type="line">Line Chart</button>
+                                <button class="widget-btn" data-type="bar">Bar Chart</button>
+                                <button class="widget-btn" data-type="box">Box Plot</button>
+                                <button class="widget-btn" data-type="heatmap">Heatmap</button>
+                                <button class="widget-btn" data-type="pie">Pie Chart</button>
+                            </div>
+                        </div>
+                        <div id="widgetsList"></div>
+                        <div class="dashboard-actions">
+                            <button class="btn" id="saveDashboardBtn">
+                                <i class="fas fa-save"></i> Save Dashboard
+                            </button>
+                            <button class="btn" id="cancelDashboardBtn" style="background: #6c757d;">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div id="dashboardViewer"></div>
+                </div>
+
+                <!-- Data Scraping Section -->
+                <div id="scraping" class="section">
+                    <h2><i class="fas fa-search"></i> Data Scraping</h2>
+                    <p>Search and scrape data-related content from the web using DuckDuckGo.</p>
+
+                    <div class="scraping-form">
+                        <div class="form-group">
+                            <label for="scrapeQuery">Search Query *</label>
+                            <input type="text" id="scrapeQuery" placeholder="Enter your search query (e.g., 'materials database')" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="scrapeSite">Site Filter (optional)</label>
+                            <input type="text" id="scrapeSite" placeholder="e.g., github.com, kaggle.com">
+                            <small>Limit search to a specific website</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="scrapePages">Number of Pages *</label>
+                            <input type="number" id="scrapePages" value="1" min="1" max="10" required>
+                            <small>Maximum 10 pages to avoid overloading</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Filter Keywords</label>
+                            <div class="filter-tags" id="filterTags">
+                                <span class="filter-tag">database <button onclick="removeFilter(this)">×</button></span>
+                                <span class="filter-tag">dataset <button onclick="removeFilter(this)">×</button></span>
+                                <span class="filter-tag">repository <button onclick="removeFilter(this)">×</button></span>
+                                <span class="filter-tag">data center <button onclick="removeFilter(this)">×</button></span>
+                                <span class="filter-tag">platform <button onclick="removeFilter(this)">×</button></span>
+                                <span class="filter-tag">materials database <button onclick="removeFilter(this)">×</button></span>
+                                <span class="filter-tag">machine learning <button onclick="removeFilter(this)">×</button></span>
+                            </div>
+                            <input type="text" id="newFilter" placeholder="Add custom filter keyword">
+                            <button class="btn-small" onclick="addFilter()">Add Filter</button>
+                        </div>
+
+                        <button class="btn" id="startScrapingBtn">
+                            <i class="fas fa-search"></i> Start Scraping
+                        </button>
+                    </div>
+
+                    <div id="scrapingProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p id="progressText">Initializing scraping...</p>
+                    </div>
+
+                    <div id="scrapingResults"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab-main" id="fabMain" title="Quick Actions">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-item" onclick="switchSection('upload')" title="Upload Data">
+                <i class="fas fa-upload"></i>
+            </button>
+            <button class="fab-item" onclick="switchSection('visualization')" title="Create Chart">
+                <i class="fas fa-chart-bar"></i>
+            </button>
+            <button class="fab-item" onclick="switchSection('dashboard')" title="View Dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+            </button>
+            <button class="fab-item" onclick="switchSection('ai-summary')" title="AI Analysis">
+                <i class="fas fa-magic"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3 id="loadingText">Processing...</h3>
+            <p id="loadingSubtext">Please wait while we process your request</p>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentSessionId = null;
+        let currentSection = 'home';
+        let currentDataColumns = [];
+        let currentDataTypes = {};
+
+        // DOM elements
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.section');
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const dataPreview = document.getElementById('dataPreview');
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            setupNavigation();
+            setupFileUpload();
+            setupSearch();
+            setupTabs();
+            populateFunctions();
+            initializeAnimations();
+            setupThemeToggle();
+            setupFAB();
+            setupKeyboardShortcuts();
+        });
+
+        // Theme toggle functionality
+        function setupThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            const themeText = themeToggle.querySelector('.theme-text');
+
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme, themeIcon, themeText);
+
+            // Theme toggle event
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeButton(newTheme, themeIcon, themeText);
+
+                // Add transition effect
+                document.body.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    document.body.style.transition = '';
+                }, 300);
+            });
+        }
+
+        function updateThemeButton(theme, icon, text) {
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+                text.textContent = 'Light Mode';
+            } else {
+                icon.className = 'fas fa-moon';
+                text.textContent = 'Dark Mode';
+            }
+        }
+
+        // Floating Action Button functionality
+        function setupFAB() {
+            const fabMain = document.getElementById('fabMain');
+            const fabMenu = document.getElementById('fabMenu');
+
+            fabMain.addEventListener('click', function() {
+                this.classList.toggle('active');
+                fabMenu.classList.toggle('active');
+            });
+
+            // Close FAB menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!fabMain.contains(e.target) && !fabMenu.contains(e.target)) {
+                    fabMain.classList.remove('active');
+                    fabMenu.classList.remove('active');
+                }
+            });
+        }
+
+        // Keyboard shortcuts
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                // Ctrl/Cmd + K: Focus search
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInputs = document.querySelectorAll('input[type="text"]');
+                    if (searchInputs.length > 0) {
+                        searchInputs[0].focus();
+                        showNotification('Search activated! Press Ctrl+K anytime', 'info');
+                    }
+                }
+
+                // Ctrl/Cmd + U: Upload data
+                if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
+                    e.preventDefault();
+                    switchSection('upload');
+                    showNotification('Upload section opened', 'success');
+                }
+
+                // Ctrl/Cmd + V: Visualization
+                if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
+                    e.preventDefault();
+                    switchSection('visualization');
+                    showNotification('Visualization section opened', 'success');
+                }
+
+                // Ctrl/Cmd + D: Dashboard
+                if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                    e.preventDefault();
+                    switchSection('dashboard');
+                    showNotification('Dashboard section opened', 'success');
+                }
+
+                // Ctrl/Cmd + H: Home/Landing page
+                if ((e.ctrlKey || e.metaKey) && e.key === 'h') {
+                    e.preventDefault();
+                    switchSection('home');
+                    showNotification('Home page opened', 'success');
+                }
+
+                // Ctrl/Cmd + M: Toggle theme
+                if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
+                    e.preventDefault();
+                    const themeToggle = document.getElementById('themeToggle');
+                    themeToggle.click();
+                }
+
+                // Escape: Close modals/forms
+                if (e.key === 'Escape') {
+                    const fabMain = document.getElementById('fabMain');
+                    const fabMenu = document.getElementById('fabMenu');
+                    fabMain.classList.remove('active');
+                    fabMenu.classList.remove('active');
+                }
+            });
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                <span>${message}</span>
+            `;
+
+            // Style the notification
+            Object.assign(notification.style, {
+                position: 'fixed',
+                top: '20px',
+                right: '20px',
+                background: 'var(--bg-secondary)',
+                color: 'var(--text-primary)',
+                padding: '12px 20px',
+                borderRadius: '8px',
+                boxShadow: '0 4px 20px var(--shadow-color)',
+                border: '1px solid var(--border-color)',
+                zIndex: '9999',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                fontSize: '14px',
+                fontWeight: '500',
+                backdropFilter: 'blur(10px)',
+                animation: 'slideInRight 0.3s ease-out'
+            });
+
+            document.body.appendChild(notification);
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease-in';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize animations
+        function initializeAnimations() {
+            // Animate feature cards with stagger
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.style.setProperty('--i', index);
+            });
+
+            // Animate stat items with stagger
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach((item, index) => {
+                item.style.setProperty('--i', index);
+            });
+
+            // Start counter animations when stats section is visible
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounterAnimation();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            // Initialize particle background
+            createParticles();
+        }
+
+        // Create animated particle background
+        function createParticles() {
+            const particleContainer = document.getElementById('particleBackground');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+
+                // Random size between 2px and 8px
+                const size = Math.random() * 6 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+
+                // Random horizontal position
+                particle.style.left = Math.random() * 100 + '%';
+
+                // Random animation delay
+                particle.style.animationDelay = Math.random() * 20 + 's';
+
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        // Counter animation for stats
+        function startCounterAnimation() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const step = target / (duration / 16); // 60 FPS
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+
+        // Loading overlay functions
+        function showLoading(text = 'Processing...', subtext = 'Please wait while we process your request') {
+            document.getElementById('loadingText').textContent = text;
+            document.getElementById('loadingSubtext').textContent = subtext;
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+
+        // Navigation setup
+        function setupNavigation() {
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    switchSection(sectionId);
+                });
+            });
+        }
+
+        function switchSection(sectionId) {
+            // Update navigation
+            navItems.forEach(item => item.classList.remove('active'));
+            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+
+            // Update content
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+
+            currentSection = sectionId;
+        }
+
+        // File upload setup
+        function setupFileUpload() {
+            uploadArea.addEventListener('click', () => fileInput.click());
+
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileUpload(files[0]);
+                }
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFileUpload(e.target.files[0]);
+                }
+            });
+        }
+
+        async function handleFileUpload(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            uploadStatus.innerHTML = '<div class="alert alert-success"><span class="loading"></span>Uploading and processing file...</div>';
+
+            try {
+                const response = await fetch('http://localhost:5000/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    currentSessionId = result.session_id;
+                    uploadStatus.innerHTML = '<div class="alert alert-success">File uploaded successfully!</div>';
+                    displayDataPreview(result);
+                } else {
+                    uploadStatus.innerHTML = `<div class="alert alert-error">Error: ${result.error}</div>`;
+                }
+            } catch (error) {
+                uploadStatus.innerHTML = `<div class="alert alert-error">Error: ${error.message}</div>`;
+            }
+        }
+
+        function displayDataPreview(data) {
+            // Store column information for parameter forms
+            currentDataColumns = data.columns;
+            currentDataTypes = data.dtypes;
+
+            let html = '<h3>Data Preview</h3>';
+            html += '<div class="stats-grid">';
+            html += `<div class="stat-card"><div class="stat-value">${data.shape[0]}</div><div class="stat-label">Rows</div></div>`;
+            html += `<div class="stat-card"><div class="stat-value">${data.shape[1]}</div><div class="stat-label">Columns</div></div>`;
+            html += `<div class="stat-card"><div class="stat-value">${Object.values(data.stats).reduce((a, b) => a + (b.count || 0), 0) - data.shape[0] * data.shape[1]}</div><div class="stat-label">Missing Values</div></div>`;
+            html += '</div>';
+
+            html += '<div class="data-preview"><table class="data-table"><thead><tr>';
+            data.columns.forEach(col => {
+                html += `<th>${col}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+            data.preview.forEach(row => {
+                html += '<tr>';
+                data.columns.forEach(col => {
+                    html += `<td>${row[col]}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table></div>';
+
+            dataPreview.innerHTML = html;
+        }
+
+        // Search setup
+        function setupSearch() {
+            const searchInputs = ['pandasSearch', 'numpySearch', 'sklearnSearch', 'tensorflowSearch'];
+
+            searchInputs.forEach(searchId => {
+                const searchInput = document.getElementById(searchId);
+                if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                        filterFunctions(searchId.replace('Search', '').toLowerCase(), this.value);
+                    });
+                }
+            });
+        }
+
+        function filterFunctions(library, searchTerm) {
+            const functions = document.querySelectorAll(`#${library}Functions .function-card`);
+            functions.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(searchTerm.toLowerCase()) ? 'block' : 'none';
+            });
+        }
+
+        // Tab setup for visualization
+        function setupTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const library = this.getAttribute('data-library');
+                    switchVisualizationLibrary(library);
+                });
+            });
+        }
+
+        function switchVisualizationLibrary(library) {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-library="${library}"]`).classList.add('active');
+
+            populateVisualizationFunctions(library);
+        }
+
+        // Populate functions
+        function populateFunctions() {
+            populatePandasFunctions();
+            populateNumpyFunctions();
+            populateVisualizationFunctions('matplotlib');
+            populateSklearnFunctions();
+            populateTensorflowFunctions();
+        }
+
+        function populatePandasFunctions() {
+            const functions = [
+                { name: 'info', description: 'Display DataFrame information' },
+                { name: 'describe', description: 'Generate descriptive statistics' },
+                { name: 'head', description: 'Return the first n rows' },
+                { name: 'tail', description: 'Return the last n rows' },
+                { name: 'shape', description: 'Return DataFrame dimensions' },
+                { name: 'columns', description: 'Get column names' },
+                { name: 'dtypes', description: 'Get data types of columns' },
+                { name: 'isnull', description: 'Check for missing values' },
+                { name: 'corr', description: 'Compute pairwise correlation' },
+                { name: 'value_counts', description: 'Count unique values' },
+                { name: 'groupby', description: 'Group data and aggregate' },
+                { name: 'pivot_table', description: 'Create pivot table' },
+                { name: 'dropna', description: 'Remove missing values' },
+                { name: 'fillna', description: 'Fill missing values' },
+                { name: 'drop_duplicates', description: 'Remove duplicate rows' },
+                { name: 'sort_values', description: 'Sort by values' },
+                { name: 'reset_index', description: 'Reset DataFrame index' },
+                { name: 'set_index', description: 'Set DataFrame index' },
+                { name: 'rename', description: 'Rename columns' }
+            ];
+
+            const container = document.getElementById('pandasFunctions');
+            container.innerHTML = functions.map(func =>
+                `<div class="function-card" onclick="executePandasFunction('${func.name}')">
+                    <h4>${func.name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                    <p>${func.description}</p>
+                </div>`
+            ).join('');
+        }
+
+        function populateNumpyFunctions() {
+            const functions = [
+                { name: 'mean', description: 'Compute arithmetic mean' },
+                { name: 'median', description: 'Compute median' },
+                { name: 'std', description: 'Compute standard deviation' },
+                { name: 'var', description: 'Compute variance' },
+                { name: 'min', description: 'Find minimum value' },
+                { name: 'max', description: 'Find maximum value' },
+                { name: 'sum', description: 'Compute sum' },
+                { name: 'prod', description: 'Compute product' },
+                { name: 'cumsum', description: 'Compute cumulative sum' },
+                { name: 'cumprod', description: 'Compute cumulative product' },
+                { name: 'sort', description: 'Sort array' },
+                { name: 'unique', description: 'Find unique elements' },
+                { name: 'transpose', description: 'Transpose array' },
+                { name: 'reshape', description: 'Reshape array' },
+                { name: 'flatten', description: 'Flatten array' },
+                { name: 'dot', description: 'Dot product' },
+                { name: 'linalg_inv', description: 'Matrix inverse' },
+                { name: 'linalg_eig', description: 'Eigenvalues/vectors' },
+                { name: 'fft', description: 'Fast Fourier Transform' },
+                { name: 'sin', description: 'Sine function' },
+                { name: 'cos', description: 'Cosine function' },
+                { name: 'exp', description: 'Exponential function' },
+                { name: 'log', description: 'Natural logarithm' },
+                { name: 'sqrt', description: 'Square root' }
+            ];
+
+            const container = document.getElementById('numpyFunctions');
+            container.innerHTML = functions.map(func =>
+                `<div class="function-card" onclick="executeNumpyFunction('${func.name}')">
+                    <h4>${func.name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                    <p>${func.description}</p>
+                </div>`
+            ).join('');
+        }
+
+        function populateVisualizationFunctions(library) {
+            const chartTypes = {
+                matplotlib: [
+                    { name: 'histogram', description: 'Histogram plot' },
+                    { name: 'scatter', description: 'Scatter plot' },
+                    { name: 'line', description: 'Line plot' },
+                    { name: 'bar', description: 'Bar chart' },
+                    { name: 'box', description: 'Box plot' }
+                ],
+                seaborn: [
+                    { name: 'heatmap', description: 'Correlation heatmap' },
+                    { name: 'pairplot', description: 'Pairwise relationships' },
+                    { name: 'boxplot', description: 'Box plot' },
+                    { name: 'violinplot', description: 'Violin plot' },
+                    { name: 'histplot', description: 'Histogram' }
+                ],
+                plotly: [
+                    { name: 'scatter', description: 'Interactive scatter plot' },
+                    { name: 'line', description: 'Interactive line plot' },
+                    { name: 'bar', description: 'Interactive bar chart' },
+                    { name: 'histogram', description: 'Interactive histogram' },
+                    { name: 'box', description: 'Interactive box plot' },
+                    { name: 'heatmap', description: 'Interactive heatmap' },
+                    { name: 'pie', description: 'Interactive pie chart' }
+                ]
+            };
+
+            const container = document.getElementById('vizFunctions');
+            container.innerHTML = chartTypes[library].map(chart =>
+                `<div class="function-card" onclick="createVisualization('${library}', '${chart.name}')">
+                    <h4>${chart.name.replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                    <p>${chart.description}</p>
+                </div>`
+            ).join('');
+        }
+
+        function populateSklearnFunctions() {
+            const algorithms = [
+                { name: 'linear_regression', description: 'Linear regression model' },
+                { name: 'logistic_regression', description: 'Logistic regression for classification' },
+                { name: 'decision_tree', description: 'Decision tree model' },
+                { name: 'random_forest', description: 'Random forest ensemble' },
+                { name: 'svm', description: 'Support Vector Machine' },
+                { name: 'knn', description: 'K-Nearest Neighbors' }
+            ];
+
+            const container = document.getElementById('sklearnFunctions');
+            container.innerHTML = algorithms.map(alg =>
+                `<div class="function-card" onclick="executeSklearnAlgorithm('${alg.name}')">
+                    <h4>${alg.name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                    <p>${alg.description}</p>
+                </div>`
+            ).join('');
+        }
+
+        function populateTensorflowFunctions() {
+            const models = [
+                { name: 'simple_nn', description: 'Simple neural network' },
+                { name: 'deep_nn', description: 'Deep neural network' },
+                { name: 'cnn_1d', description: '1D Convolutional Neural Network' },
+                { name: 'lstm', description: 'LSTM Recurrent Neural Network' }
+            ];
+
+            const container = document.getElementById('tensorflowFunctions');
+            container.innerHTML = models.map(model =>
+                `<div class="function-card" onclick="executeTensorflowModel('${model.name}')">
+                    <h4>${model.name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                    <p>${model.description}</p>
+                </div>`
+            ).join('');
+        }
+
+        // Function execution
+        async function executePandasFunction(operation) {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            const params = await getPandasParams(operation);
+            if (params === null) return;
+
+            try {
+                const response = await fetch(`http://localhost:5000/pandas/${operation}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId, params })
+                });
+
+                const result = await response.json();
+                displayResult('pandasResult', result);
+            } catch (error) {
+                displayError('pandasResult', error.message);
+            }
+        }
+
+        async function executeNumpyFunction(operation) {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            // Most numpy operations don't need additional parameters
+            // They work on the numeric columns of the uploaded data
+            const params = {};
+
+            // Some operations might need axis specification
+            if (['mean', 'median', 'std', 'var', 'min', 'max', 'sum', 'prod', 'cumsum', 'cumprod', 'sort'].includes(operation)) {
+                const axis = confirm('Calculate along columns (OK) or rows (Cancel)?');
+                params.axis = axis ? 0 : 1;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/numpy/${operation}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId, params })
+                });
+
+                const result = await response.json();
+                displayResult('numpyResult', result);
+            } catch (error) {
+                displayError('numpyResult', error.message);
+            }
+        }
+
+        async function createVisualization(library, chartType) {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            const params = await getVisualizationParams(chartType);
+            if (params === null) return;
+
+            showLoading('Creating Visualization...', 'Generating your chart, this may take a moment');
+
+            try {
+                const response = await fetch(`http://localhost:5000/visualize/${library}/${chartType}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId, params })
+                });
+
+                const result = await response.json();
+
+                if (library === 'plotly' && result.plotly_json) {
+                    const chartContainer = document.getElementById('chartContainer');
+                    chartContainer.innerHTML = '<div id="plotlyChart"></div>';
+                    Plotly.newPlot('plotlyChart', JSON.parse(result.plotly_json));
+                } else if (result.image) {
+                    const chartContainer = document.getElementById('chartContainer');
+                    chartContainer.innerHTML = `<img src="${result.image}" style="max-width: 100%; border-radius: 10px;">`;
+                }
+            } catch (error) {
+                displayError('chartContainer', error.message);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        async function executeSklearnAlgorithm(algorithm) {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            const params = await getSklearnParams();
+            if (params === null) return;
+
+            showLoading('Running Machine Learning...', 'Training your model, this may take some time');
+
+            try {
+                const response = await fetch(`http://localhost:5000/sklearn/${algorithm}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId, params })
+                });
+
+                const result = await response.json();
+                displayResult('sklearnResult', result);
+            } catch (error) {
+                displayError('sklearnResult', error.message);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        async function executeTensorflowModel(modelType) {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            const params = await getTensorflowParams();
+            if (params === null) return;
+
+            showLoading('Training Deep Learning Model...', 'This may take several minutes depending on your data size');
+
+            try {
+                const response = await fetch(`http://localhost:5000/tensorflow/${modelType}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId, params })
+                });
+
+                const result = await response.json();
+                displayResult('tensorflowResult', result);
+
+                // Show download buttons if training was successful
+                if (result && !result.error) {
+                    document.getElementById('tensorflowCodeDownload').style.display = 'block';
+                    // Store model info for code generation
+                    window.currentModelType = modelType;
+                    window.currentModelParams = params;
+                }
+            } catch (error) {
+                displayError('tensorflowResult', error.message);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Download TensorFlow model code
+        document.getElementById('downloadTensorflowCodeBtn').addEventListener('click', async function() {
+            if (!currentSessionId) {
+                showNotification('No active session!', 'error');
+                return;
+            }
+
+            if (!window.currentModelType) {
+                showNotification('No model trained yet!', 'error');
+                return;
+            }
+
+            try {
+                showNotification('Generating model code...', 'info');
+
+                // Build query parameters
+                const params = new URLSearchParams({
+                    model_type: window.currentModelType,
+                    target_column: window.currentModelParams?.target_column || 'target',
+                    epochs: window.currentModelParams?.epochs || 50,
+                    batch_size: window.currentModelParams?.batch_size || 32
+                });
+
+                // Download the file
+                const response = await fetch(`http://localhost:5000/tensorflow/download_code/${currentSessionId}?${params}`);
+
+                if (!response.ok) {
+                    throw new Error('Failed to download code');
+                }
+
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `tensorflow_${window.currentModelType}_model.py`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                showNotification('Model code downloaded successfully!', 'success');
+
+            } catch (error) {
+                console.error('Download error:', error);
+                showNotification('Failed to download model code', 'error');
+            }
+        });
+
+        // Download model weights (placeholder for future implementation)
+        document.getElementById('downloadModelWeightsBtn').addEventListener('click', function() {
+            if (!currentSessionId) {
+                showNotification('No active session!', 'error');
+                return;
+            }
+
+            // This would typically download the trained model weights
+            // For now, we'll create a placeholder
+            const placeholderContent = `# Model weights would be saved here
+# This feature requires backend implementation to save/load model weights
+print("Model weights download - Coming soon!")`;
+
+            downloadFile(placeholderContent, 'model_weights_placeholder.py', 'text/plain');
+            showNotification('Model weights placeholder downloaded!', 'info');
+        });
+
+
+        // Utility function to download files
+        function downloadFile(content, filename, contentType) {
+            const blob = new Blob([content], { type: contentType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+                <span>${message}</span>
+                <button class="notification-close" onclick="this.parentElement.remove()">×</button>
+            `;
+
+            // Add to page
+            document.body.appendChild(notification);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // Parameter collection functions
+        function getPandasParams(operation) {
+            return new Promise((resolve) => {
+                const params = {};
+                let formHtml = '<div class="params-form"><h4>Parameters for ' + operation.replace('_', ' ') + '</h4>';
+
+                if (operation === 'head' || operation === 'tail') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Number of rows:</label>
+                            <input type="number" id="param_n" value="5" min="1" max="100">
+                        </div>
+                    `;
+                } else if (operation === 'value_counts') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Select column:</label>
+                            <select id="param_column" required>
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (operation === 'groupby') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Group by column:</label>
+                            <select id="param_column" required>
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Aggregation function:</label>
+                            <select id="param_agg" required>
+                                <option value="mean">Mean</option>
+                                <option value="sum">Sum</option>
+                                <option value="count">Count</option>
+                                <option value="min">Min</option>
+                                <option value="max">Max</option>
+                                <option value="std">Standard Deviation</option>
+                            </select>
+                        </div>
+                    `;
+                } else if (operation === 'fillna') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Fill value:</label>
+                            <input type="text" id="param_value" placeholder="Enter value to fill NaN">
+                        </div>
+                    `;
+                } else if (operation === 'sort_values') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Sort by column:</label>
+                            <select id="param_by">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sort order:</label>
+                            <select id="param_ascending">
+                                <option value="true">Ascending</option>
+                                <option value="false">Descending</option>
+                            </select>
+                        </div>
+                    `;
+                } else if (operation === 'dropna') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Drop from specific columns (optional):</label>
+                            <select id="param_subset" multiple>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                            <small>Hold Ctrl/Cmd to select multiple columns</small>
+                        </div>
+                    `;
+                } else if (operation === 'set_index') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Select column for index:</label>
+                            <select id="param_column">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (operation === 'rename') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Column to rename:</label>
+                            <select id="param_old_name">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>New column name:</label>
+                            <input type="text" id="param_new_name" placeholder="Enter new column name">
+                        </div>
+                    `;
+                } else if (operation === 'pivot_table') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Values column:</label>
+                            <select id="param_values">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.filter(col => currentDataTypes[col] && currentDataTypes[col].includes('int') || currentDataTypes[col].includes('float')).map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Index column:</label>
+                            <select id="param_index">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                }
+
+                if (formHtml.includes('form-group')) {
+                    formHtml += `
+                        <div style="margin-top: 20px;">
+                            <button class="btn" onclick="submitParams('${operation}', 'pandas')">Execute</button>
+                            <button class="btn" onclick="cancelParams()" style="background: #6c757d;">Cancel</button>
+                        </div>
+                    `;
+
+                    // Show parameter form
+                    const container = document.getElementById('pandasParams');
+                    container.innerHTML = formHtml + '</div>';
+
+                    // Store resolve function for later
+                    window.paramResolve = resolve;
+                } else {
+                    // No parameters needed
+                    resolve(params);
+                }
+            });
+        }
+
+        function submitParams(operation, library) {
+            const params = {};
+
+            // Collect all form values
+            const inputs = document.querySelectorAll('#' + library + 'Params input, #' + library + 'Params select');
+            let hasErrors = false;
+
+            inputs.forEach(input => {
+                const paramName = input.id.replace('param_', '');
+                let value;
+
+                if (input.type === 'number') {
+                    value = parseFloat(input.value) || 0;
+                    if (input.hasAttribute('required') && (!input.value || isNaN(value))) {
+                        input.style.borderColor = '#e53e3e';
+                        hasErrors = true;
+                    } else {
+                        input.style.borderColor = '#e2e8f0';
+                    }
+                } else if (input.type === 'checkbox') {
+                    value = input.checked;
+                } else if (input.multiple) {
+                    const selected = Array.from(input.selectedOptions).map(option => option.value);
+                    value = selected.length > 0 ? selected : null;
+                    if (input.hasAttribute('required') && (!value || value.length === 0)) {
+                        input.style.borderColor = '#e53e3e';
+                        hasErrors = true;
+                    } else {
+                        input.style.borderColor = '#e2e8f0';
+                    }
+                } else {
+                    value = input.value || null;
+                    if (input.hasAttribute('required') && !value) {
+                        input.style.borderColor = '#e53e3e';
+                        hasErrors = true;
+                    } else {
+                        input.style.borderColor = '#e2e8f0';
+                    }
+                }
+
+                params[paramName] = value;
+            });
+
+            if (hasErrors) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Special handling for rename operation
+            if (operation === 'rename') {
+                params.columns = {};
+                if (params.old_name && params.new_name) {
+                    params.columns[params.old_name] = params.new_name;
+                }
+                delete params.old_name;
+                delete params.new_name;
+            }
+
+            // Hide form
+            document.getElementById(library + 'Params').innerHTML = '';
+
+            // Resolve promise
+            if (window.paramResolve) {
+                window.paramResolve(params);
+            }
+        }
+
+        function cancelParams() {
+            // Hide all parameter forms
+            ['pandasParams', 'numpyParams', 'sklearnParams', 'tensorflowParams', 'vizParams'].forEach(id => {
+                document.getElementById(id).innerHTML = '';
+            });
+
+            // Resolve with null to cancel
+            if (window.paramResolve) {
+                window.paramResolve(null);
+            }
+        }
+
+        function getVisualizationParams(chartType) {
+            return new Promise((resolve) => {
+                const params = {};
+                let formHtml = '<div class="params-form"><h4>Parameters for ' + chartType + ' chart</h4>';
+
+                if (['scatter', 'line', 'bar'].includes(chartType)) {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>X-axis column:</label>
+                            <select id="param_x_column">
+                                <option value="">Choose X column...</option>
+                                ${currentDataColumns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Y-axis column:</label>
+                            <select id="param_y_column">
+                                <option value="">Choose Y column...</option>
+                                ${currentDataColumns.filter(col => currentDataTypes[col] && (currentDataTypes[col].includes('int') || currentDataTypes[col].includes('float'))).map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (chartType === 'histogram') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Select column:</label>
+                            <select id="param_column">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.filter(col => currentDataTypes[col] && (currentDataTypes[col].includes('int') || currentDataTypes[col].includes('float'))).map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (chartType === 'box') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Select column:</label>
+                            <select id="param_column">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.filter(col => currentDataTypes[col] && (currentDataTypes[col].includes('int') || currentDataTypes[col].includes('float'))).map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (chartType === 'pie') {
+                    formHtml += `
+                        <div class="form-group">
+                            <label>Select column:</label>
+                            <select id="param_column">
+                                <option value="">Choose column...</option>
+                                ${currentDataColumns.filter(col => currentDataTypes[col] && currentDataTypes[col].includes('object')).map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (chartType === 'heatmap') {
+                    // No additional parameters needed for correlation heatmap
+                } else if (chartType === 'pairplot') {
+                    // No additional parameters needed
+                }
+
+                if (formHtml.includes('form-group')) {
+                    formHtml += `
+                        <div style="margin-top: 20px;">
+                            <button class="btn" onclick="submitVizParams('${chartType}')">Create Chart</button>
+                            <button class="btn" onclick="cancelParams()" style="background: #6c757d;">Cancel</button>
+                        </div>
+                    `;
+
+                    // Show parameter form
+                    const container = document.getElementById('vizParams');
+                    container.innerHTML = formHtml + '</div>';
+
+                    // Store resolve function for later
+                    window.paramResolve = resolve;
+                } else {
+                    // No parameters needed
+                    resolve(params);
+                }
+            });
+        }
+
+        function submitVizParams(chartType) {
+            const params = {};
+
+            // Collect all form values
+            const inputs = document.querySelectorAll('#vizParams input, #vizParams select');
+            inputs.forEach(input => {
+                const paramName = input.id.replace('param_', '');
+                if (input.multiple) {
+                    const selected = Array.from(input.selectedOptions).map(option => option.value);
+                    params[paramName] = selected.length > 0 ? selected : null;
+                } else {
+                    params[paramName] = input.value || null;
+                }
+            });
+
+            // Hide form
+            document.getElementById('vizParams').innerHTML = '';
+
+            // Resolve promise
+            if (window.paramResolve) {
+                window.paramResolve(params);
+            }
+        }
+
+        function getSklearnParams() {
+            return new Promise((resolve) => {
+                let formHtml = '<div class="params-form"><h4>Parameters for Machine Learning</h4>';
+                formHtml += `
+                    <div class="form-group">
+                        <label>Target column (for supervised learning):</label>
+                        <select id="param_target_column" required>
+                            <option value="">Choose target column...</option>
+                            ${currentDataColumns.map(col => `<option value="${col}">${col} (${currentDataTypes[col]})</option>`).join('')}
+                        </select>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <button class="btn" onclick="submitSklearnParams()">Execute Algorithm</button>
+                        <button class="btn" onclick="cancelParams()" style="background: #6c757d;">Cancel</button>
+                    </div>
+                `;
+
+                // Show parameter form
+                const container = document.getElementById('sklearnParams');
+                container.innerHTML = formHtml + '</div>';
+
+                // Store resolve function for later
+                window.paramResolve = resolve;
+            });
+        }
+
+        function submitSklearnParams() {
+            const params = {};
+
+            // Collect all form values
+            const inputs = document.querySelectorAll('#sklearnParams input, #sklearnParams select');
+            inputs.forEach(input => {
+                const paramName = input.id.replace('param_', '');
+                params[paramName] = input.value || null;
+            });
+
+            // Hide form
+            document.getElementById('sklearnParams').innerHTML = '';
+
+            // Resolve promise
+            if (window.paramResolve) {
+                window.paramResolve(params);
+            }
+        }
+
+        function getTensorflowParams() {
+            return new Promise((resolve) => {
+                let formHtml = '<div class="params-form"><h4>Parameters for Deep Learning</h4>';
+                formHtml += `
+                    <div class="form-group">
+                        <label>Target column:</label>
+                        <select id="param_target_column" required>
+                            <option value="">Choose target column...</option>
+                            ${currentDataColumns.filter(col => currentDataTypes[col] && (currentDataTypes[col].includes('int') || currentDataTypes[col].includes('float'))).map(col => `<option value="${col}">${col} (${currentDataTypes[col]})</option>`).join('')}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Training epochs:</label>
+                        <input type="number" id="param_epochs" value="50" min="1" max="500">
+                    </div>
+                    <div class="form-group">
+                        <label>Batch size:</label>
+                        <input type="number" id="param_batch_size" value="32" min="1" max="512">
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <button class="btn" onclick="submitTensorflowParams()">Train Model</button>
+                        <button class="btn" onclick="cancelParams()" style="background: #6c757d;">Cancel</button>
+                    </div>
+                `;
+
+                // Show parameter form
+                const container = document.getElementById('tensorflowParams');
+                container.innerHTML = formHtml + '</div>';
+
+                // Store resolve function for later
+                window.paramResolve = resolve;
+            });
+        }
+
+        function submitTensorflowParams() {
+            const params = {};
+
+            // Collect all form values
+            const inputs = document.querySelectorAll('#tensorflowParams input, #tensorflowParams select');
+            inputs.forEach(input => {
+                const paramName = input.id.replace('param_', '');
+                if (input.type === 'number') {
+                    params[paramName] = parseInt(input.value) || 32;
+                } else {
+                    params[paramName] = input.value || null;
+                }
+            });
+
+            // Hide form
+            document.getElementById('tensorflowParams').innerHTML = '';
+
+            // Resolve promise
+            if (window.paramResolve) {
+                window.paramResolve(params);
+            }
+        }
+
+        // Result display
+        function displayResult(containerId, result) {
+            const container = document.getElementById(containerId);
+            let html = '<div class="result-area"><h4>Result</h4><div class="result-content">';
+
+            if (result.result) {
+                if (typeof result.result === 'object') {
+                    html += JSON.stringify(result.result, null, 2);
+                } else {
+                    html += result.result;
+                }
+            } else {
+                html += JSON.stringify(result, null, 2);
+            }
+
+            html += '</div></div>';
+            container.innerHTML = html;
+        }
+
+        function displayError(containerId, error) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<div class="alert alert-error">Error: ${error}</div>`;
+        }
+
+        // AI Connection Test
+        document.getElementById('testAIConnection').addEventListener('click', async function() {
+            this.innerHTML = '<span class="loading"></span> Testing...';
+            this.disabled = true;
+
+            try {
+                const response = await fetch('http://localhost:5000/test_ai');
+                const result = await response.json();
+
+                const container = document.getElementById('aiTestResult');
+                if (result.status === 'success') {
+                    container.innerHTML = `
+                        <div class="alert alert-success">
+                            <strong>✓ AI Connection Working!</strong><br>
+                            Provider: ${result.model_used}<br>
+                            Response length: ${result.response_length} characters
+                        </div>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <div class="alert alert-success">
+                            <strong>✓ Local AI Analysis Ready!</strong><br>
+                            Advanced statistical analysis is available locally.<br>
+                            No API keys or internet connection required!
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('aiTestResult').innerHTML = `<div class="alert alert-error">Connection test failed: ${error.message}</div>`;
+            } finally {
+                this.innerHTML = '<i class="fas fa-plug"></i> Test AI Connection';
+                this.disabled = false;
+            }
+        });
+
+        // AI Summary
+        document.getElementById('generateSummary').addEventListener('click', async function() {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            console.log('AI Summary button clicked');
+            console.log('Current session ID:', currentSessionId);
+
+            this.innerHTML = '<span class="loading"></span> Generating...';
+            this.disabled = true;
+
+            try {
+                console.log('Sending request to AI summary endpoint...');
+                const response = await fetch('http://localhost:5000/ai_summary', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId })
+                });
+
+                console.log('Response status:', response.status);
+                const result = await response.json();
+                console.log('Response result:', result);
+
+                const container = document.getElementById('aiSummaryResult');
+                if (result.summary) {
+                    container.innerHTML = `<div class="result-area"><h4>AI Summary</h4><div class="result-content">${result.summary.replace(/\n/g, '<br>')}</div></div>`;
+                } else if (result.error) {
+                    container.innerHTML = `<div class="alert alert-error">Error: ${result.error}</div>`;
+                } else {
+                    container.innerHTML = `<div class="alert alert-error">Unknown error occurred</div>`;
+                }
+            } catch (error) {
+                console.error('Frontend error:', error);
+                displayError('aiSummaryResult', error.message);
+            } finally {
+                this.innerHTML = '<i class="fas fa-magic"></i> Generate AI Summary';
+                this.disabled = false;
+            }
+        });
+
+        // Download
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            window.open(`http://localhost:5000/download/${currentSessionId}`, '_blank');
+        });
+
+        // Reports
+        document.getElementById('generateReportBtn').addEventListener('click', async function() {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+
+            const title = document.getElementById('reportTitle').value;
+            const reportType = document.getElementById('reportType').value;
+            const includeStats = document.getElementById('includeStats').checked;
+            const includeCorrelations = document.getElementById('includeCorrelations').checked;
+            const includeVisualizations = document.getElementById('includeVisualizations').checked;
+            const includeAI = document.getElementById('includeAI').checked;
+
+            this.innerHTML = '<span class="loading"></span> Generating...';
+            this.disabled = true;
+
+            try {
+                const response = await fetch('http://localhost:5000/reports/create', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: currentSessionId,
+                        report_type: reportType,
+                        title: title,
+                        include_stats: includeStats,
+                        include_correlations: includeCorrelations,
+                        include_visualizations: includeVisualizations,
+                        include_ai: includeAI
+                    })
+                });
+
+                const result = await response.json();
+                const container = document.getElementById('reportResult');
+
+                if (result.report_id) {
+                    container.innerHTML = `
+                        <div class="result-area">
+                            <h4>Report Generated Successfully!</h4>
+                            <p><strong>Title:</strong> ${result.filename}</p>
+                            <p><strong>Type:</strong> ${result.report_type.toUpperCase()}</p>
+                            <a href="http://localhost:5000/reports/download/${result.report_id}" target="_blank" class="btn">
+                                <i class="fas fa-download"></i> Download Report
+                            </a>
+                        </div>
+                    `;
+                } else if (result.error) {
+                    container.innerHTML = `<div class="alert alert-error">Error: ${result.error}</div>`;
+                }
+            } catch (error) {
+                document.getElementById('reportResult').innerHTML = `<div class="alert alert-error">Error: ${error.message}</div>`;
+            } finally {
+                this.innerHTML = '<i class="fas fa-file-alt"></i> Generate Report';
+                this.disabled = false;
+            }
+        });
+
+        // Dashboard variables
+        let currentDashboardId = null;
+        let currentWidgets = [];
+
+        // Dashboard functions
+        document.getElementById('createDashboardBtn').addEventListener('click', function() {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+            showDashboardEditor();
+        });
+
+        document.getElementById('loadDashboardsBtn').addEventListener('click', function() {
+            if (!currentSessionId) {
+                alert('Please upload data first!');
+                return;
+            }
+            loadDashboards();
+        });
+
+        document.getElementById('saveDashboardBtn').addEventListener('click', async function() {
+            await saveDashboard();
+        });
+
+        document.getElementById('cancelDashboardBtn').addEventListener('click', function() {
+            hideDashboardEditor();
+        });
+
+        // Widget selector
+        document.querySelectorAll('.widget-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const widgetType = this.getAttribute('data-type');
+                addWidget(widgetType);
+            });
+        });
+
+        function showDashboardEditor() {
+            document.getElementById('dashboardEditor').style.display = 'block';
+            document.getElementById('dashboardViewer').style.display = 'none';
+            currentWidgets = [];
+            updateWidgetsList();
+        }
+
+        function hideDashboardEditor() {
+            document.getElementById('dashboardEditor').style.display = 'none';
+            document.getElementById('dashboardViewer').style.display = 'none';
+            currentDashboardId = null;
+            currentWidgets = [];
+        }
+
+        function addWidget(type) {
+            // Get default parameters based on widget type
+            let defaultParams = {};
+
+            // Set some basic defaults for common widget types
+            if (type === 'histogram') {
+                // Will use first numeric column
+                defaultParams = {};
+            } else if (['scatter', 'line', 'bar'].includes(type)) {
+                // Will need column selection, but for now use defaults
+                defaultParams = {};
+            } else if (type === 'box') {
+                defaultParams = {};
+            } else if (type === 'heatmap') {
+                defaultParams = {};
+            } else if (type === 'pie') {
+                defaultParams = {};
+            }
+
+            const widget = {
+                id: Date.now().toString(),
+                type: type,
+                title: `${type.charAt(0).toUpperCase() + type.slice(1)} Widget`,
+                params: defaultParams
+            };
+            currentWidgets.push(widget);
+            updateWidgetsList();
+        }
+
+        function updateWidgetsList() {
+            const container = document.getElementById('widgetsList');
+            container.innerHTML = '<h4>Current Widgets</h4>';
+
+            if (currentWidgets.length === 0) {
+                container.innerHTML += '<p>No widgets added yet.</p>';
+                return;
+            }
+
+            currentWidgets.forEach((widget, index) => {
+                container.innerHTML += `
+                    <div class="widget-item">
+                        <span>${widget.title} (${widget.type})</span>
+                        <button class="btn-small" onclick="configureWidget(${index})">Configure</button>
+                        <button class="btn-small" onclick="removeWidget(${index})" style="background: #e53e3e;">Remove</button>
+                    </div>
+                `;
+            });
+        }
+
+        function configureWidget(index) {
+            const widget = currentWidgets[index];
+            // Simple configuration - could be enhanced
+            const newTitle = prompt('Enter widget title:', widget.title);
+            if (newTitle) {
+                widget.title = newTitle;
+                updateWidgetsList();
+            }
+        }
+
+        function removeWidget(index) {
+            currentWidgets.splice(index, 1);
+            updateWidgetsList();
+        }
+
+        async function saveDashboard() {
+            const title = document.getElementById('dashboardTitle').value;
+            const layout = document.getElementById('dashboardLayout').value;
+
+            if (currentWidgets.length === 0) {
+                alert('Please add at least one widget to the dashboard.');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/dashboards/create', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: currentSessionId,
+                        title: title,
+                        widgets: currentWidgets,
+                        layout: layout
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.dashboard_id) {
+                    alert('Dashboard created successfully!');
+                    hideDashboardEditor();
+                    loadDashboards();
+                } else if (result.error) {
+                    alert('Error creating dashboard: ' + result.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+
+        async function loadDashboards() {
+            try {
+                const response = await fetch(`http://localhost:5000/dashboards?session_id=${currentSessionId}`);
+                const result = await response.json();
+
+                const container = document.getElementById('dashboardList');
+                if (result.dashboards && result.dashboards.length > 0) {
+                    container.innerHTML = '<h3>Your Dashboards</h3>';
+                    result.dashboards.forEach(dashboard => {
+                        container.innerHTML += `
+                            <div class="dashboard-item">
+                                <h4>${dashboard.title}</h4>
+                                <p>Widgets: ${dashboard.widget_count}</p>
+                                <p>Created: ${new Date(dashboard.created_at * 1000).toLocaleString()}</p>
+                                <button class="btn" onclick="viewDashboard('${dashboard.dashboard_id}')">View</button>
+                                <button class="btn" onclick="deleteDashboard('${dashboard.dashboard_id}')" style="background: #e53e3e;">Delete</button>
+                            </div>
+                        `;
+                    });
+                } else {
+                    container.innerHTML = '<p>No dashboards found. Create your first dashboard!</p>';
+                }
+            } catch (error) {
+                document.getElementById('dashboardList').innerHTML = `<div class="alert alert-error">Error loading dashboards: ${error.message}</div>`;
+            }
+        }
+
+        async function viewDashboard(dashboardId) {
+            try {
+                const response = await fetch(`http://localhost:5000/dashboards/${dashboardId}?session_id=${currentSessionId}`);
+                const result = await response.json();
+
+                if (result.dashboard_id) {
+                    document.getElementById('dashboardEditor').style.display = 'none';
+                    const viewer = document.getElementById('dashboardViewer');
+                    viewer.style.display = 'block';
+
+                    viewer.innerHTML = `<h3>${result.title}</h3><div class="dashboard-grid">`;
+
+                    // Render each widget
+                    for (const widget of result.widgets) {
+                        viewer.innerHTML += `<div class="dashboard-widget"><h4>${widget.title}</h4><div id="widget-${widget.id}" class="widget-content">Loading...</div></div>`;
+                        renderWidget(widget);
+                    }
+
+                    viewer.innerHTML += '</div>';
+                } else if (result.error) {
+                    alert('Error loading dashboard: ' + result.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+
+        async function renderWidget(widget) {
+            try {
+                const response = await fetch(`http://localhost:5000/dashboard/widget/${widget.type}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: currentSessionId,
+                        widget_config: widget.params || {}
+                    })
+                });
+
+                const result = await response.json();
+                const widgetElement = document.getElementById(`widget-${widget.id}`);
+
+                if (result.type === 'image' && result.data) {
+                    widgetElement.innerHTML = `<img src="${result.data}" style="max-width: 100%; height: auto; border-radius: 8px;">`;
+                } else if (result.type === 'plotly' && result.data) {
+                    widgetElement.innerHTML = `<div id="plotly-widget-${widget.id}"></div>`;
+                    Plotly.newPlot(`plotly-widget-${widget.id}`, JSON.parse(result.data));
+                } else if (result.error) {
+                    widgetElement.innerHTML = `<div class="alert alert-error">Error: ${result.error}</div>`;
+                } else {
+                    widgetElement.innerHTML = `<div class="alert alert-error">Unable to render ${widget.type} visualization</div>`;
+                }
+            } catch (error) {
+                const widgetElement = document.getElementById(`widget-${widget.id}`);
+                widgetElement.innerHTML = `<div class="alert alert-error">Error loading widget: ${error.message}</div>`;
+            }
+        }
+
+        async function deleteDashboard(dashboardId) {
+            if (!confirm('Are you sure you want to delete this dashboard?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/dashboards/${dashboardId}?session_id=${currentSessionId}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+
+                if (result.message) {
+                    alert('Dashboard deleted successfully!');
+                    loadDashboards();
+                } else if (result.error) {
+                    alert('Error deleting dashboard: ' + result.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+
+        // Scraping functions
+        function addFilter() {
+            const newFilterInput = document.getElementById('newFilter');
+            const filterText = newFilterInput.value.trim();
+
+            if (filterText) {
+                const filterTags = document.getElementById('filterTags');
+                const tag = document.createElement('span');
+                tag.className = 'filter-tag';
+                tag.innerHTML = `${filterText} <button onclick="removeFilter(this)">×</button>`;
+                filterTags.appendChild(tag);
+                newFilterInput.value = '';
+            }
+        }
+
+        function removeFilter(button) {
+            button.parentElement.remove();
+        }
+
+        document.getElementById('startScrapingBtn').addEventListener('click', async function() {
+            const query = document.getElementById('scrapeQuery').value.trim();
+            const site = document.getElementById('scrapeSite').value.trim();
+            const pages = parseInt(document.getElementById('scrapePages').value);
+
+            if (!query) {
+                alert('Please enter a search query.');
+                return;
+            }
+
+            if (pages < 1 || pages > 10) {
+                alert('Number of pages must be between 1 and 10.');
+                return;
+            }
+
+            // Collect filters
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const filters = Array.from(filterTags).map(tag => tag.textContent.replace('×', '').trim());
+
+            // Show progress
+            document.getElementById('scrapingProgress').style.display = 'block';
+            document.getElementById('scrapingResults').innerHTML = '';
+            this.disabled = true;
+            this.innerHTML = '<span class="loading"></span> Scraping...';
+
+            try {
+                const response = await fetch('http://localhost:5000/scrape', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        query: query,
+                        site: site,
+                        num_pages: pages,
+                        filters: filters
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    displayScrapingResults(result);
+                } else {
+                    document.getElementById('scrapingResults').innerHTML =
+                        `<div class="alert alert-error">Error: ${result.error}</div>`;
+                }
+            } catch (error) {
+                document.getElementById('scrapingResults').innerHTML =
+                    `<div class="alert alert-error">Error: ${error.message}</div>`;
+            } finally {
+                document.getElementById('scrapingProgress').style.display = 'none';
+                this.disabled = false;
+                this.innerHTML = '<i class="fas fa-search"></i> Start Scraping';
+            }
+        });
+
+        function displayScrapingResults(result) {
+            const container = document.getElementById('scrapingResults');
+
+            let html = '<div class="result-area"><h4>Scraping Results</h4>';
+            html += `<div class="stats-grid">`;
+            html += `<div class="stat-card"><div class="stat-value">${result.total_scraped}</div><div class="stat-label">Total Results</div></div>`;
+            html += `<div class="stat-card"><div class="stat-value">${result.filtered_results}</div><div class="stat-label">Filtered Results</div></div>`;
+            html += `<div class="stat-card"><div class="stat-value">${result.pages}</div><div class="stat-label">Pages Scraped</div></div>`;
+            html += `</div>`;
+
+            if (result.results && result.results.length > 0) {
+                html += '<div class="scraping-results-list">';
+                result.results.forEach((item, index) => {
+                    html += `
+                        <div class="result-item">
+                            <h5>${index + 1}. ${item.title}</h5>
+                            <p><a href="${item.link}" target="_blank">${item.link}</a></p>
+                            <small>Found on page ${item.page}</small>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+
+                // Add download button
+                html += `<button class="btn" onclick="downloadScrapingResults(${JSON.stringify(result.results).replace(/"/g, '"')})">
+                    <i class="fas fa-download"></i> Download Results as CSV
+                </button>`;
+            } else {
+                html += '<p>No results found matching the filters.</p>';
+            }
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function downloadScrapingResults(results) {
+            const csvContent = "data:text/csv;charset=utf-8,"
+                + "Title,Link,Page\n"
+                + results.map(row => `"${row.title.replace(/"/g, '""')}","${row.link}",${row.page}`).join("\n");
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "scraping_results.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
