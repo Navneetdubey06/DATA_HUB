@@ -1,6 +1,6 @@
 # 📊 Data Hub - Comprehensive Data Analysis Platform
 
-A powerful web application built with Flask and HTML/CSS/JS that provides comprehensive access to Python's data science libraries including pandas, numpy, matplotlib, seaborn, plotly, scikit-learn, and TensorFlow, along with AI-powered insights using OpenAI GPT.
+A powerful web application built with Flask and HTML/CSS/JS that provides comprehensive access to Python's data science libraries including pandas, numpy, matplotlib, seaborn, plotly, scikit-learn, and TensorFlow, along with AI-powered insights using data metrics.
 
 ## 🚀 Features
 
@@ -43,10 +43,7 @@ A powerful web application built with Flask and HTML/CSS/JS that provides compre
 - Performance visualization
 
 #### 🤖 AI-Powered Insights
-- Automated statistical analysis using OpenAI GPT
-- Intelligent data insights and recommendations
-- Natural language explanations
-
+-uses libraries and formula to generate insights without any api 
 ## 🛠️ Installation
 
 1. **Clone or download the project files**
@@ -56,11 +53,6 @@ A powerful web application built with Flask and HTML/CSS/JS that provides compre
    pip install flask flask-cors pandas numpy matplotlib seaborn plotly scikit-learn tensorflow openai python-dotenv
    ```
 
-3. **Set up environment variables**:
-   - The `.env` file should contain your OpenAI API key:
-   ```
-   OPEN_API_KEY=your_openai_api_key_here
-   ```
 
 ## 🚀 Running the Application
 
@@ -71,7 +63,7 @@ A powerful web application built with Flask and HTML/CSS/JS that provides compre
 
 2. **Run the Flask backend**:
    ```bash
-   python backend.py
+   python app.py
    ```
 
 3. **Open your browser** and go to `http://localhost:8000` (frontend) and `http://localhost:5000` (backend API)
@@ -113,13 +105,6 @@ A powerful web application built with Flask and HTML/CSS/JS that provides compre
 #### AI Summary
 - Generate intelligent insights about your dataset
 - Get recommendations and statistical analysis
-- Powered by OpenAI GPT
-
-## 🔧 Configuration
-
-### Environment Variables
-- `OPEN_API_KEY`: Your OpenAI API key for AI summary generation
-- `USE_AI`: Set to `true` to enable AI features, `false` to disable (default: `true`)
 
 ### Data Requirements
 - **CSV Files**: Standard comma-separated values
@@ -134,44 +119,3 @@ A powerful web application built with Flask and HTML/CSS/JS that provides compre
 - **AI Integration**: OpenAI GPT API
 - **Data Storage**: In-memory session storage
 - **Visualization**: Multiple plotting libraries (Matplotlib, Seaborn, Plotly)
-
-## 📋 Requirements
-
-- Python 3.7+
-- Internet connection for AI features
-- OpenAI API key
-- Sufficient RAM for large datasets
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source. Feel free to use and modify as needed.
-
-## 🆘 Troubleshooting
-
-### Common Issues
-- **Flask not found**: Use `python backend.py`
-- **API Key errors**: Ensure `.env` file has valid OpenAI API key
-- **API Quota Exceeded**: The system will automatically provide basic analysis instead
-  - Check your OpenAI billing: https://platform.openai.com/usage
-  - Add credits to your account or use a different API key
-  - Set `USE_AI=false` in `.env` for offline mode
-- **Memory errors**: Reduce dataset size or increase system RAM
-- **Import errors**: Ensure all dependencies are installed
-- **AI Summary not working**: Check OpenAI API key validity and quota
-
-### Support
-- Check the terminal output for error messages
-- Verify all dependencies are installed
-- Ensure your data files are properly formatted
-
----
-
-**Built with ❤️ using Flask, HTML/CSS/JS and Python's data science ecosystem**
