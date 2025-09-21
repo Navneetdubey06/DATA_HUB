@@ -1,5 +1,10 @@
-import tensorflow as tf
-from tensorflow import keras
+try:
+    import tensorflow as tf
+    from tensorflow import keras
+    TENSORFLOW_AVAILABLE = True
+except ImportError:
+    TENSORFLOW_AVAILABLE = False
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, r2_score
@@ -8,6 +13,8 @@ import numpy as np
 from flask import jsonify
 
 def handle_tensorflow_operation(model_type, df, params=None):
+    if not TENSORFLOW_AVAILABLE:
+        return {'error': 'TensorFlow is not available. Deep learning features require TensorFlow installation.'}
     """Handle all TensorFlow operations"""
     if params is None:
         params = {}
